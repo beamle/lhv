@@ -1,0 +1,19 @@
+<svg width="413" height="413" viewBox="0 0 413 413" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g style="mix-blend-mode:multiply">
+        <path d="M0.218994 104.339L43.561 233.274V89.7686L0.218994 104.339Z" fill="#00A8BE"/>
+    </g>
+    <g style="mix-blend-mode:multiply">
+        <path d="M103.856 412.642L232.792 369.3H89.286L103.856 412.642Z" fill="#00A8BE"/>
+    </g>
+    <g style="mix-blend-mode:multiply">
+        <path d="M308.523 0.70166L179.587 44.0437H323.092L308.523 0.70166Z" fill="#00A8BE"/>
+    </g>
+    <g style="mix-blend-mode:multiply">
+        <path d="M412.159 309.006L368.817 180.07V323.575L412.159 309.006Z" fill="#00A8BE"/>
+    </g>
+    <path d="M368.817 323.575L232.792 369.3H368.817V323.575Z" fill="#F3A341"/>
+    <path d="M43.561 369.3H89.286L43.561 233.274V369.3Z" fill="#F3A341"/>
+    <path d="M368.817 44.0435H323.092L368.817 180.069V44.0435Z" fill="#F3A341"/>
+    <path d="M43.561 44.0435V89.7685L179.587 44.0435H43.561Z" fill="#F3A341"/>
+    <path d="M368.817 180.069L323.092 44.0435H179.587L43.561 89.7685V233.273L89.286 369.299H232.792L368.817 323.574V180.069Z" fill="#008489"/>
+</svg>

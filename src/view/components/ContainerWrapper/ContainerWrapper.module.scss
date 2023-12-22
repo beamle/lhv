@@ -1,0 +1,12 @@
+@import "@/app/styles";
+.containerWrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 962px;
+
+  @include media-small {
+    align-items: center;
+    justify-content: center;
+  }
+}

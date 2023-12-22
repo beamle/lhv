@@ -1,0 +1,62 @@
+@mixin typography(
+  $font-size: var(--font-size-m),
+  $font-weight: var(--font-weight-regular),
+  $line-height: var(--line-height-m)
+) {
+  all: unset;
+
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: var(--text-default);
+}
+
+.h1 {
+  @include typography(var(--font-size-xxl), $line-height: var(--line-height-l));
+}
+
+.h2 {
+  @include typography(var(--font-size-xl), $line-height: var(--line-height-l));
+}
+
+.h3 {
+  @include typography(var(--font-size-l), $line-height: var(--line-height-m), $font-weight: var(--font-weight-bold));
+}
+
+.body1 {
+  @include typography;
+}
+
+.body2 {
+  @include typography(var(--font-size-s), $line-height: var(--line-height-s)) ;
+  font-family: "Helvetica Neue", sans-serif;
+}
+//
+//.subtitle2 {
+//  @include typography(var(--font-size-s));
+//}
+//
+//.caption {
+//  @include typography(var(--font-size-xs), 400, var(--line-height-s));
+//}
+//
+//.caption2 {
+//  @include typography(var(--font-size-xs), 400, var(--line-height-s));
+//
+//  margin-left: 5px;
+//  color: var(--color-accent-500);
+//}
+//
+//.overline {
+//  @include typography(var(--font-size-xs), $line-height: var(--line-height-s));
+//}
+//
+.link1 {
+  @include typography(var(--font-size-s), $font-weight: var(--font-weight-bold));
+}
+//
+.link2 {
+  @include typography;
+  text-decoration-line: underline;
+  cursor: pointer;
+}

@@ -1,0 +1,94 @@
+.flipCardOuter {
+  width: 294px;
+  height: 294px;
+  background-color: var(--surface);
+
+  .flipCardInner {
+    transform-style: preserve-3d;
+    transition: 0.5s linear 0.1s;
+    position: relative;
+    width: inherit;
+    height: inherit;
+
+    &.showBack {
+      transform: rotateY(180deg);
+    }
+
+    .card {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &.frontCard {
+        transform: rotateY(0);
+        background-color: var(--color-light-400);
+        color: var(--text-default);
+        .turnPageSquare {
+          content: "";
+          height: 51px;
+          width: 51px;
+          background-color: #3B3B47;
+          float: right;
+          svg {
+            margin-left: 8px;
+            margin-top: 8px;
+          }
+        }
+
+        .cardBody {
+          position: relative;
+          height: 294px;
+          .turnPageSquare {
+            content: "";
+            height: 51px;
+            width: 51px;
+            background-color: #3B3B47;
+            float: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--icon-dark) 0%, var(--icon-dark) 50%, #FFF 0%, #FFF);
+          }
+          .cardImage svg {
+            height: 193px;
+          }
+          .frontCardText {
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: var(--font-size-l);
+            font-weight: var(--font-weight-bold);
+            display: flex;
+            padding: 10px 20px;
+            max-width: 203px;
+
+          }
+
+        }
+      }
+
+      &.backCard {
+        transform: rotateY(180deg);
+        background-color: var(--color-light-300);
+        color: #e84747;
+
+        .cardBody {
+          display: flex;
+          flex-direction: column;
+          padding: 32px 20px;
+
+          .backCardLink {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+
+            svg {
+              margin: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

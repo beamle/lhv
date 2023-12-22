@@ -1,0 +1,23 @@
+@import "@/app/styles";
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 80px 0;
+
+  .cardsContainerWrapper {
+    flex-wrap: wrap;
+    @include media-small {
+      row-gap: 10px;
+    }
+
+    .cardsContent {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      column-gap: 30px;
+      row-gap: 20px;
+    }
+  }
+}

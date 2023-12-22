@@ -1,0 +1,66 @@
+//vertical
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 10px;
+}
+
+.stepItem {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.stepCircle {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  background-color: var(--accent-beige-100);
+  border-radius: 50%;
+  border: 1px solid var(--text-default);
+}
+
+.stepContent {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 100px;
+  flex-direction: column;
+
+}
+
+.stepLine {
+  position: absolute;
+  top: 50px;
+  left: 25px;
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+  transform: translateX(-1px);
+  //z-index: -1;
+}
+// horizontal
+@media (min-width: 768px) {
+  .stepContainer {
+    flex-direction: row;
+  }
+
+  .stepItem {
+    flex-direction: column;
+    //margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .stepIcon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .stepLine {
+    top: 25px;
+    left: 50px;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-1px);
+  }
+}
