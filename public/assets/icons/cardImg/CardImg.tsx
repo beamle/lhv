@@ -46,8 +46,8 @@ export const CardImg = () => {
         d="M374.4 35.4H167.2V225.8H374.4V35.4Z"
         fill="#EEEEEE"
         stroke="#3A3A3A"
-        stroke-width="3.3123"
-        stroke-miterlimit="10"
+        strokeWidth="3.3123"
+        strokeMiterlimit="10"
       />
       <path d="M311.8 93.5H229.7V166.7H311.8V93.5Z" fill="#B4BDC9" />
       <path d="M311.8 161.3H229.7V166.8H311.8V161.3Z" fill="#5F6061" />
@@ -155,8 +155,8 @@ export const CardImg = () => {
           y2="504.45"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FDF2EF" />
-          <stop offset="1" stop-color="#FDD0BF" />
+          <stop stopColor="#FDF2EF" />
+          <stop offset="1" stopColor="#FDD0BF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_335_171"
@@ -166,17 +166,17 @@ export const CardImg = () => {
           y2="165.699"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F9F9F9" stop-opacity="0" />
-          <stop offset="0.48" stop-color="#FAE0D6" />
-          <stop offset="0.56" stop-color="#FAE0D6" stop-opacity="0.99" />
-          <stop offset="0.62" stop-color="#FAE1D5" stop-opacity="0.94" />
-          <stop offset="0.69" stop-color="#FAE3D9" stop-opacity="0.87" />
-          <stop offset="0.75" stop-color="#F9E5DD" stop-opacity="0.77" />
-          <stop offset="0.81" stop-color="#FAE8E1" stop-opacity="0.65" />
-          <stop offset="0.87" stop-color="#F9ECE7" stop-opacity="0.49" />
-          <stop offset="0.92" stop-color="#FAF1EE" stop-opacity="0.3" />
-          <stop offset="0.98" stop-color="#F8F6F5" stop-opacity="0.09" />
-          <stop offset="1" stop-color="#F9F9F9" stop-opacity="0" />
+          <stop stopColor="#F9F9F9" stopOpacity="0" />
+          <stop offset="0.48" stopColor="#FAE0D6" />
+          <stop offset="0.56" stopColor="#FAE0D6" stopOpacity="0.99" />
+          <stop offset="0.62" stopColor="#FAE1D5" stopOpacity="0.94" />
+          <stop offset="0.69" stopColor="#FAE3D9" stopOpacity="0.87" />
+          <stop offset="0.75" stopColor="#F9E5DD" stopOpacity="0.77" />
+          <stop offset="0.81" stopColor="#FAE8E1" stopOpacity="0.65" />
+          <stop offset="0.87" stopColor="#F9ECE7" stopOpacity="0.49" />
+          <stop offset="0.92" stopColor="#FAF1EE" stopOpacity="0.3" />
+          <stop offset="0.98" stopColor="#F8F6F5" stopOpacity="0.09" />
+          <stop offset="1" stopColor="#F9F9F9" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_335_171"
@@ -186,8 +186,8 @@ export const CardImg = () => {
           y2="215.028"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.18" stop-color="#FBCEC0" stop-opacity="0" />
-          <stop offset="1" stop-color="#FBCEC0" />
+          <stop offset="0.18" stopColor="#FBCEC0" stopOpacity="0" />
+          <stop offset="1" stopColor="#FBCEC0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_335_171"
@@ -197,12 +197,12 @@ export const CardImg = () => {
           y2="187.764"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F9F9F9" stop-opacity="0" />
-          <stop offset="0.09" stop-color="#F9F9F9" stop-opacity="0.05" />
-          <stop offset="0.26" stop-color="#F9F9F9" stop-opacity="0.19" />
-          <stop offset="0.49" stop-color="#F9F9F9" stop-opacity="0.41" />
-          <stop offset="0.76" stop-color="#F9F9F9" stop-opacity="0.71" />
-          <stop offset="1" stop-color="#F9F9F9" />
+          <stop stopColor="#F9F9F9" stopOpacity="0" />
+          <stop offset="0.09" stopColor="#F9F9F9" stopOpacity="0.05" />
+          <stop offset="0.26" stopColor="#F9F9F9" stopOpacity="0.19" />
+          <stop offset="0.49" stopColor="#F9F9F9" stopOpacity="0.41" />
+          <stop offset="0.76" stopColor="#F9F9F9" stopOpacity="0.71" />
+          <stop offset="1" stopColor="#F9F9F9" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_335_171"
@@ -212,11 +212,11 @@ export const CardImg = () => {
           y2="21.3091"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F9F9F9" stop-opacity="0" />
-          <stop offset="0.13" stop-color="#F9F4F2" stop-opacity="0.11" />
-          <stop offset="0.42" stop-color="#F9E7E2" stop-opacity="0.38" />
-          <stop offset="0.84" stop-color="#FAD4C9" stop-opacity="0.82" />
-          <stop offset="1" stop-color="#FCCCBF" />
+          <stop stopColor="#F9F9F9" stopOpacity="0" />
+          <stop offset="0.13" stopColor="#F9F4F2" stopOpacity="0.11" />
+          <stop offset="0.42" stopColor="#F9E7E2" stopOpacity="0.38" />
+          <stop offset="0.84" stopColor="#FAD4C9" stopOpacity="0.82" />
+          <stop offset="1" stopColor="#FCCCBF" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_335_171"
@@ -226,11 +226,11 @@ export const CardImg = () => {
           y2="7.07195"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.13" stop-color="#F9F9F9" stop-opacity="0" />
-          <stop offset="0.25" stop-color="#F9F4F2" stop-opacity="0.11" />
-          <stop offset="0.5" stop-color="#F9E7E2" stop-opacity="0.38" />
-          <stop offset="0.86" stop-color="#FAD4C9" stop-opacity="0.82" />
-          <stop offset="1" stop-color="#FCCCBF" />
+          <stop offset="0.13" stopColor="#F9F9F9" stopOpacity="0" />
+          <stop offset="0.25" stopColor="#F9F4F2" stopOpacity="0.11" />
+          <stop offset="0.5" stopColor="#F9E7E2" stopOpacity="0.38" />
+          <stop offset="0.86" stopColor="#FAD4C9" stopOpacity="0.82" />
+          <stop offset="1" stopColor="#FCCCBF" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_335_171"
@@ -240,12 +240,12 @@ export const CardImg = () => {
           y2="99.9576"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F9F9F9" stop-opacity="0" />
-          <stop offset="0.09" stop-color="#F9F9F9" stop-opacity="0.05" />
-          <stop offset="0.26" stop-color="#F9F9F9" stop-opacity="0.19" />
-          <stop offset="0.49" stop-color="#F9F9F9" stop-opacity="0.41" />
-          <stop offset="0.76" stop-color="#F9F9F9" stop-opacity="0.71" />
-          <stop offset="1" stop-color="#F9F9F9" />
+          <stop stopColor="#F9F9F9" stopOpacity="0" />
+          <stop offset="0.09" stopColor="#F9F9F9" stopOpacity="0.05" />
+          <stop offset="0.26" stopColor="#F9F9F9" stopOpacity="0.19" />
+          <stop offset="0.49" stopColor="#F9F9F9" stopOpacity="0.41" />
+          <stop offset="0.76" stopColor="#F9F9F9" stopOpacity="0.71" />
+          <stop offset="1" stopColor="#F9F9F9" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_335_171"
@@ -255,11 +255,11 @@ export const CardImg = () => {
           y2="164.008"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FCCCBF" />
-          <stop offset="0.15" stop-color="#FAD4C9" stop-opacity="0.82" />
-          <stop offset="0.54" stop-color="#F9E7E2" stop-opacity="0.38" />
-          <stop offset="0.8" stop-color="#F9F4F2" stop-opacity="0.11" />
-          <stop offset="0.92" stop-color="#F9F9F9" stop-opacity="0" />
+          <stop stopColor="#FCCCBF" />
+          <stop offset="0.15" stopColor="#FAD4C9" stopOpacity="0.82" />
+          <stop offset="0.54" stopColor="#F9E7E2" stopOpacity="0.38" />
+          <stop offset="0.8" stopColor="#F9F4F2" stopOpacity="0.11" />
+          <stop offset="0.92" stopColor="#F9F9F9" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_335_171"
@@ -269,13 +269,13 @@ export const CardImg = () => {
           y2="137.263"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#63635D" />
-          <stop offset="0.2562" stop-color="#656566" />
-          <stop offset="0.3774" stop-color="#7B7E82" />
-          <stop offset="0.5431" stop-color="#9499A1" />
-          <stop offset="0.7046" stop-color="#A6ADB7" />
-          <stop offset="0.8584" stop-color="#B0B9C4" />
-          <stop offset="0.996" stop-color="#B4BDC9" />
+          <stop stopColor="#63635D" />
+          <stop offset="0.2562" stopColor="#656566" />
+          <stop offset="0.3774" stopColor="#7B7E82" />
+          <stop offset="0.5431" stopColor="#9499A1" />
+          <stop offset="0.7046" stopColor="#A6ADB7" />
+          <stop offset="0.8584" stopColor="#B0B9C4" />
+          <stop offset="0.996" stopColor="#B4BDC9" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_335_171"
@@ -285,8 +285,8 @@ export const CardImg = () => {
           y2="115.402"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#9D9D9C" />
-          <stop offset="0.9901" stop-color="#ACACAD" />
+          <stop stopColor="#9D9D9C" />
+          <stop offset="0.9901" stopColor="#ACACAD" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_335_171"
@@ -296,8 +296,8 @@ export const CardImg = () => {
           y2="102.863"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#9D9D9C" />
-          <stop offset="0.9901" stop-color="#ACACAD" />
+          <stop stopColor="#9D9D9C" />
+          <stop offset="0.9901" stopColor="#ACACAD" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_335_171"
@@ -307,8 +307,8 @@ export const CardImg = () => {
           y2="285.579"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#828282" />
-          <stop offset="1" stop-color="#404040" />
+          <stop stopColor="#828282" />
+          <stop offset="1" stopColor="#404040" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_335_171"
@@ -318,8 +318,8 @@ export const CardImg = () => {
           y2="244.749"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#9F9F9E" stop-opacity="0.5" />
-          <stop offset="0.9901" stop-color="#AEAEAF" stop-opacity="0" />
+          <stop stopColor="#9F9F9E" stopOpacity="0.5" />
+          <stop offset="0.9901" stopColor="#AEAEAF" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_335_171"
@@ -329,8 +329,8 @@ export const CardImg = () => {
           y2="96.0202"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.0965515" stop-color="#316257" />
-          <stop offset="0.997" stop-color="#0D3B3F" />
+          <stop offset="0.0965515" stopColor="#316257" />
+          <stop offset="0.997" stopColor="#0D3B3F" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_335_171"
@@ -340,8 +340,8 @@ export const CardImg = () => {
           y2="114.233"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.00297901" stop-color="#2D484B" />
-          <stop offset="0.9976" stop-color="#162829" />
+          <stop offset="0.00297901" stopColor="#2D484B" />
+          <stop offset="0.9976" stopColor="#162829" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_335_171"
@@ -351,8 +351,8 @@ export const CardImg = () => {
           y2="188.832"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1B3233" />
-          <stop offset="0.9954" stop-color="#213536" />
+          <stop stopColor="#1B3233" />
+          <stop offset="0.9954" stopColor="#213536" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_335_171"
@@ -362,8 +362,8 @@ export const CardImg = () => {
           y2="150.661"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3542" stop-color="#0D474B" />
-          <stop offset="1" stop-color="#1B2F2A" />
+          <stop offset="0.3542" stopColor="#0D474B" />
+          <stop offset="1" stopColor="#1B2F2A" />
         </linearGradient>
         <linearGradient
           id="paint17_linear_335_171"
@@ -373,8 +373,8 @@ export const CardImg = () => {
           y2="319.817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF9270" />
-          <stop offset="1" stop-color="#CE624F" />
+          <stop stopColor="#FF9270" />
+          <stop offset="1" stopColor="#CE624F" />
         </linearGradient>
         <linearGradient
           id="paint18_linear_335_171"
@@ -384,8 +384,8 @@ export const CardImg = () => {
           y2="281.17"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#005467" />
-          <stop offset="0.9966" stop-color="#418391" />
+          <stop stopColor="#005467" />
+          <stop offset="0.9966" stopColor="#418391" />
         </linearGradient>
         <linearGradient
           id="paint19_linear_335_171"
@@ -395,8 +395,8 @@ export const CardImg = () => {
           y2="281.17"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#005467" />
-          <stop offset="0.9966" stop-color="#418391" />
+          <stop stopColor="#005467" />
+          <stop offset="0.9966" stopColor="#418391" />
         </linearGradient>
         <linearGradient
           id="paint20_linear_335_171"
@@ -406,9 +406,10 @@ export const CardImg = () => {
           y2="179.949"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.00394759" stop-color="#666666" />
-          <stop offset="0.0967727" stop-color="#5F5F5F" />
-          <stop offset="1" stop-color="#1E1D1D" />
+          <stop offset="0.00394759" stopColor="#666666" />
+          <stop offset="0.0967727" stopColor="#5F5F5F" />
+
+          <stop offset="1" stopColor="#1E1D1D" />
         </linearGradient>
       </defs>
     </svg>

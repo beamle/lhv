@@ -1,11 +1,11 @@
 import s from "./Tips.module.scss";
-import { Card, ContainerWrapper } from "@/view/components";
+import { Card, ContainerContentWrapper } from "@/view/components";
 import { CardImg } from "../../../../public/assets/icons";
 
 export const Tips = () => {
   return (
     <div id={"tipsSection"} className={s.cardsContainer}>
-      <ContainerWrapper className={s.cardsContainerWrapper}>
+      <ContainerContentWrapper className={s.cardsContainerWrapper}>
         <div className={s.cardsContent}>
           {cards.map((card) => (
             <Card
@@ -17,7 +17,7 @@ export const Tips = () => {
             />
           ))}
         </div>
-      </ContainerWrapper>
+      </ContainerContentWrapper>
     </div>
   );
 };

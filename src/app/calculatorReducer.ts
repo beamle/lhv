@@ -1,45 +1,79 @@
-const initialState: InitialStateType = {
-  status: "idle",
-  error: null,
-  isInitialized: false,
+type InitialStateType = {
+  items: CalculatorItemType[];
 };
 
+const initialState: InitialStateType = {
+  items: [],
+};
 export const calculatorReducer = (
-  state: InitialStateType = initialState,
+  state = initialState,
   action: ActionsType,
-): InitialStateType => {
+) => {
   switch (action.type) {
-    case "APP/SET-STATUS":
-      return { ...state, status: action.status };
-    case "APP/SET-ERROR":
-      return { ...state, error: action.error };
-    case "APP/SET-INITIALIZED":
-      return { ...state, isInitialized: action.isInitialized };
+    // case "CALC/ADD-ITEM":
+    //   return { ...state, items: [...state.items, action.item] };
+    // case "CALC/ADD-ITEM-PRICE":
+    //   debugger;
+    //   return {
+    //     ...state,
+    //     items: [
+    //       state.items.find((item) =>
+    //         item.id === action.item.id
+    //           ? { ...item, price: action.item.price }
+    //           : item.price,
+    //       ),
+    //     ],
+    //   };
+    case "CALC/ADD-ITEM-PRICE": {
+      const existingItem = state.items.find(
+        (item) => item.id === action.item.id,
+      );
+      if (existingItem) {
+        // If the item with the provided id exists, update its price
+        const updatedItems = state.items.map((item) =>
+          item.id === action.item.id
+            ? { ...item, price: action.item.price }
+            : item,
+        );
+
+        return { ...state, items: updatedItems };
+      } else {
+        // If the item with the provided id doesn't exist, create a new item
+        return {
+          ...state,
+          items: [
+            ...state.items,
+            { id: action.item.id, price: action.item.price },
+          ],
+        };
+      }
+    }
+    case "CALC/REMOVE-ITEM": {
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.itemId),
+      };
+    }
+
     default:
       return { ...state };
   }
 };
 
-export type RequestStatusType = "idle" | "loading" | "succeeded" | "failed";
-export type InitialStateType = {
-  // происходит ли сейчас взаимодействие с сервером
-  status: RequestStatusType;
-  // если ошибка какая-то глобальная произойдёт - мы запишем текст ошибки сюда
-  error: string | null;
-  isInitialized: boolean;
+export const addItem = (item: CalculatorItemType) =>
+  ({ type: "CALC/ADD-ITEM", item }) as const;
+export const addItemsPrice = (item: CalculatorItemType) =>
+  ({ type: "CALC/ADD-ITEM-PRICE", item }) as const;
+export const removeItem = (itemId: string) =>
+  ({ type: "CALC/REMOVE-ITEM", itemId }) as const;
+
+export type AddItemAT = ReturnType<typeof addItem>;
+export type AddItemPriceAT = ReturnType<typeof addItemsPrice>;
+export type RemoveItemAT = ReturnType<typeof removeItem>;
+
+type ActionsType = AddItemAT | AddItemPriceAT | RemoveItemAT;
+
+export type CalculatorItemType = {
+  id: string;
+  price: number;
 };
-
-export const setAppErrorAC = (error: string | null) =>
-  ({ type: "APP/SET-ERROR", error }) as const;
-export const setAppStatusAC = (status: RequestStatusType) =>
-  ({ type: "APP/SET-STATUS", status }) as const;
-export const setIsInitializedAC = (isInitialized: boolean) =>
-  ({ type: "APP/SET-INITIALIZED", isInitialized }) as const;
-
-export type SetAppErrorActionType = ReturnType<typeof setAppErrorAC>;
-export type SetAppStatusActionType = ReturnType<typeof setAppStatusAC>;
-
-type ActionsType =
-  | SetAppErrorActionType
-  | SetAppStatusActionType
-  | ReturnType<typeof setIsInitializedAC>;

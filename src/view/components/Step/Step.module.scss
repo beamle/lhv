@@ -1,65 +1,75 @@
-@import "@/app/styles";
-
-.stepContainerWrapper {
+//vertical
+.stepContainer {
+  display: flex;
   flex-direction: column;
-  row-gap: 20px;
-  padding: 0;
-  width: 100%;
   position: relative;
+}
 
-  .circle {
-    width: 80px;
-    height: 80px;
-    background-color: transparent;
-    border-radius: 50%;
-    border: 1px solid var(--text-default);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-default);
-    font-size: 28px;
+.stepItem {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.stepCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  background-color: var(--accent-beige-100);
+  border-radius: 50%;
+  border: 1px solid var(--text-default);
+
+  .stepCirle__number {
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-tiny);
+    color: var(--text-default);
   }
-  .stick {
-    position: absolute;
-    height: 1px;
-    width: 160px;
-    background-color: var(--text-default);
-    top: 40px;
-    left: calc(50% + 50px);
-    transform: translateX(-50%);
+}
+
+.stepContent {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 100px;
+  flex-direction: column;
+  .stepContent__title {
+    margin-top: 20px;
   }
 
-  @include media-medium { // 1024
-    .stick {
-      width: 140px;
-      left: calc(50% + 40px);
-    }
+  .stepContent__text {
+    margin-top: 8px;
   }
 
-  @include media-s-medium { // 960
-    .stick {
-      width: 120px;
-    }
+}
+
+.stepLine {
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  width: 1px;
+  height: 100%;
+  background-color: var(--text-default);
+}
+// horizontal
+@media (min-width: 960px) {
+  .stepContainer {
+    flex-direction: row;
   }
 
-  @include media-small {
-    .stick {
-      width: 120px;
-    }
-  }
-  @include media-extra-small {
-    .stick {
-      width: 100px;
-    }
-  }
-
-  .stepContent {
-    display: flex;
+  .stepItem {
     flex-direction: column;
-    row-gap: 8px;
-    width: 243px;
+  }
 
-    .stepText {}
+  .stepIcon {
+    margin-bottom: 15px;
+  }
+
+  .stepLine {
+    top: 40px;
+    left: 80px;
+    width: 100%;
+    height: 1px;
   }
 }

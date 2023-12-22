@@ -7,7 +7,7 @@ type ContainerWrapperType = {
   className?: string;
 };
 
-export const ContainerWrapper = ({
+export const ContainerContentWrapper = ({
   children,
   className,
 }: ContainerWrapperType) => {

@@ -1,6 +1,6 @@
 import s from "./Benefits.module.scss";
 import { Button, Typography } from "@/view/ui";
-import { ContainerWrapper } from "@/view/components";
+import { ContainerContentWrapper } from "@/view/components";
 import { ListCheck } from "../../../../public/assets/icons";
 
 export const Benefits = () => {
@@ -25,7 +25,7 @@ export const Benefits = () => {
           </Button>
         ))}
       </div>
-      <ContainerWrapper className={s.wrapper}>
+      <ContainerContentWrapper className={s.benefitsContainerWrapper}>
         <div className={s.leftSide}>
           <Typography variant={"h2"}>
             Sisustuslaen <strong>aitab muuta kodu hubasemaks</strong>
@@ -50,7 +50,7 @@ export const Benefits = () => {
             </Typography>
           </div>
         </div>
-      </ContainerWrapper>
+      </ContainerContentWrapper>
     </div>
   );
 };

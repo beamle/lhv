@@ -1,26 +1,28 @@
-import { ContainerWrapper } from "@/view/components";
 import s from "./Step.module.scss";
 import { Typography } from "@/view/ui";
-
 type StepType = {
   number: number;
   title: string;
   text: string;
 } & { last: boolean };
-
 export const Step = ({ number, title, text, last }: StepType) => {
   return (
     <div className={s.stepContainer}>
-      <ContainerWrapper className={s.stepContainerWrapper}>
-        <div className={s.circle}>{number}</div>
-        {!last && <div className={s.stick} />}
+      <div className={s.stepItem}>
+        <div className={s.stepCircle}>
+          <div className={s.stepCirle__number}>{number}</div>
+        </div>
         <div className={s.stepContent}>
-          <Typography variant={"h3"} className={s.stepTitle}>
+          <Typography className={s.stepContent__title} variant={"h3"}>
             {title}
           </Typography>
-          <Typography dangerouslySetInnerHTML={{ __html: text }} />
+          <Typography
+            className={s.stepContent__text}
+            dangerouslySetInnerHTML={{ __html: text }}
+          />
         </div>
-      </ContainerWrapper>
+        {!last && <div className={s.stepLine} />}
+      </div>
     </div>
   );
 };

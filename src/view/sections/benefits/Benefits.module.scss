@@ -17,18 +17,13 @@
       display: flex;
       align-items: center;
       color: var(--text-default);
-      @include media-small {
-        font-size: var(--font-size-s);
-      }
     }
   }
 
-  .wrapper{
-    padding: 80px 0; //20px
-
-    @include media-small {
-      padding: 10px 20px;
-    }
+  .benefitsContainerWrapper{
+    justify-content: space-between;
+    padding: 80px 0;
+    flex-wrap: wrap;
   }
 
   .leftSide {
@@ -42,17 +37,30 @@
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    max-width: 456px;
-    width: 100%;
-    
+
     .rightSide__bulletsContainer {
       display: flex;
       flex-direction: column;
       > .bulletsPoint {
         display: flex;
-        margin: 5px;
+        margin: 5px 0;
         width: 100%;
       }
+    }
+  }
+
+  @include media-s-medium {
+    .subMenu__item {
+      font-size: var(--font-size-s);
+    }
+    .benefitsContainerWrapper {
+      padding: 10px 20px;
+    }
+    .leftSide {
+      width: initial;
+    }
+    .rightSide {
+      margin: 5px 0;
     }
   }
 

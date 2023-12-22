@@ -1,16 +1,19 @@
 import { Button, Typography } from "@/view/ui";
 import s from "./Introduce.module.scss";
-import { ContainerWrapper } from "@/view/components";
+import { ContainerContentWrapper } from "@/view/components";
 import { ArrowRightIcon } from "../../../../public/assets/icons";
 
 export const Introduce = () => {
   return (
     <div className={s.introContainer}>
-      <ContainerWrapper className={s.introContainer_content}>
+      <ContainerContentWrapper className={s.introContainer_content}>
         <div className={s.introContainer__square}>
           <img src="/assets/bg/homepage-hero-container-bg.svg" alt="" />
           <Typography className={s.intro__squareText} variant={"h1"}>
-            LHV sisustus-laen
+            LHV <br />
+            sisustus-
+            <br />
+            laen
           </Typography>
         </div>
         <div className={s.introContainer__textWithBtns}>
@@ -23,7 +26,7 @@ export const Introduce = () => {
             Sõlmi leping
           </Button>
         </div>
-      </ContainerWrapper>
+      </ContainerContentWrapper>
     </div>
   );
 };
