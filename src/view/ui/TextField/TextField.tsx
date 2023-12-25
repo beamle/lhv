@@ -1,5 +1,4 @@
 import {
-  ChangeEvent,
   ComponentProps,
   ComponentPropsWithoutRef,
   forwardRef,
@@ -17,6 +16,7 @@ export type TextFieldProps = {
   labelProps?: ComponentProps<"label">;
   root?: string;
   icon?: ReactNode;
+  trailingIcon?: boolean;
   search?: boolean;
 } & ComponentPropsWithoutRef<"input">;
 
@@ -27,21 +27,14 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       containerProps,
       errorMessage,
       label,
-      labelProps,
-      // onChange,
       icon,
       placeholder,
       search,
+      trailingIcon,
       ...restProps
     },
     ref,
   ) => {
-    // function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    //   onChange?.(e);
-    // }
-
-    console.log(errorMessage, "error message");
-
     const classNames = {
       error: clsx(s.errorText),
       field: clsx(
@@ -50,26 +43,22 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         search && s.hasLeadingIcon,
         className,
       ),
+      trailingIcon: s.trailingIcon,
       fieldContainer: clsx(s.fieldContainer),
-      label: clsx(s.label, labelProps?.className),
       leadingIcon: s.leadingIcon,
-      root: clsx(s.root, className, containerProps?.className),
+      root: clsx(s.root, className, containerProps && containerProps.className),
     };
 
     return (
       <div className={classNames.root}>
         {label && (
-          <Typography
-            as={"label"}
-            className={classNames.label}
-            variant={"body2"}
-          >
+          <Typography as={"label"} variant={"body2"}>
             {label}
           </Typography>
         )}
         <div className={classNames.fieldContainer}>
-          {icon && (
-            <label htmlFor={"inputId"} className={s.icon}>
+          {icon && trailingIcon && (
+            <label htmlFor={"inputId"} className={s.trailingIcon}>
               {icon}
             </label>
           )}

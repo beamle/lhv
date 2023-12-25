@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
   }
 
   &:focus-visible {
@@ -48,11 +49,16 @@
 .clean {
   background-color: transparent;
   border-radius: 4px;
+  color: var(--text-default);
 
   &:hover {
-    background-color: var(--color-light-200);
+    //background-color: var(--color-light-200);
   }
-
+  &:disabled {
+    svg {
+        fill: #b4b4b4;
+    }
+  }
 }
 
 .link {
@@ -81,4 +87,8 @@
 .icon {
   margin-right: 6px;
   padding: 0;
+}
+
+.disabled {
+  background-color: #262633;
 }

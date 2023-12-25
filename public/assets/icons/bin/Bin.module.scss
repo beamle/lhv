@@ -1,0 +1,11 @@
+.bin {
+  .innerIcon {
+    transition: stroke 0.3s ease;
+  }
+  &:hover .innerIcon {
+    stroke: #c52929;
+  }
+  &:active .innerIcon {
+    stroke: red;
+  }
+}

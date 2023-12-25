@@ -1,0 +1,92 @@
+@import "@/app/styles";
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  .footerContainerContentWrapper {
+    flex-direction: column;
+    .footer {
+      width: 100%;
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      color: black;
+
+      .footerMainContainer {
+        color: black;
+        background-color: greenyellow;
+      }
+
+      .footerRightContainer {
+        width: 100%;
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        color: black;
+      }
+
+      .footerLeftContainer {
+        width: 100%;
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        color: black;
+      }
+
+      .footerColumnsItemContainer {
+        width: 100%;
+      }
+    }
+
+    .footerAppstoreLinks {
+      color: #73737b;
+      width: 100%;
+      padding: 40px 0;
+
+      .terms {
+        color: var(--text-submenu2);
+        padding-top: 40px;
+      }
+
+      .mediaContainer {
+        display: flex;
+        justify-content: space-between;
+
+        .socialMediaIcons {
+          display: flex;
+          cursor: pointer;
+
+          div {
+            margin-right: 5px;
+          }
+        }
+
+        .mobileStores {
+          display: flex;
+          cursor: pointer;
+
+          div {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    @include media-small {
+      .footer {
+        display: none;
+      }
+      .mediaContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  @include media-medium {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}

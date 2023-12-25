@@ -9,7 +9,7 @@ export type ButtonProps<T extends ElementType> = {
   children?: ReactNode | string;
   className?: string;
   icon?: ReactNode;
-  // title?: string;
+  iconFirst?: boolean;
   variant?: ButtonVariants;
 } & ComponentPropsWithoutRef<T>;
 
@@ -21,6 +21,7 @@ export const Button = <T extends ElementType = "button">(
     children,
     className,
     icon,
+    iconFirst,
     variant = "clean",
     ...rest
   } = props;
@@ -32,8 +33,17 @@ export const Button = <T extends ElementType = "button">(
 
   return (
     <Component className={classNames.component} {...rest}>
-      {children}
-      {icon && <div className={classNames.icon}>{icon}</div>}
+      {iconFirst ? (
+        <>
+          <div className={classNames.icon}>{icon}</div>
+          {children}
+        </>
+      ) : (
+        <>
+          {children}
+          <div className={classNames.icon}>{icon}</div>
+        </>
+      )}
     </Component>
   );
 };

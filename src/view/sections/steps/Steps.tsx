@@ -42,7 +42,9 @@ const steps = [
   {
     number: 3,
     title: "Sõlmi leping",
-    text: "Lepingu saad allkirjastada <a href='https://www.lhv.ee/coflink/auth/login' >iseteeninduskeskkonnas </a>. Kui sul puudub digitaalse allkirjastamise võimalus, siis palun pöördu meie koostööpartneri <a href='https://www.euronics.ee/kauplused'>Euronicsi kauplusse</a>, kus saad lepingu allkirjastada paberkandjal.",
+    text:
+      "Lepingu saad allkirjastada <a href='https://www.lhv.ee/coflink/auth/login' >iseteeninduskeskkonnas </a>. \n" +
+      " Kui sul puudub digitaalse allkirjastamise võimalus, siis palun pöördu meie koostööpartneri <a href='https://www.euronics.ee/kauplused'>Euronicsi kauplusse</a>, kus saad lepingu allkirjastada paberkandjal.",
   },
   {
     number: 4,

@@ -1,5 +1,5 @@
 import { combineReducers, legacy_createStore as createStore } from "redux";
-import { calculatorReducer } from "./calculatorReducer.ts";
+import { calculatorReducer } from "@/view/sections/calculator/reducer";
 
 const rootReducer = combineReducers({
   calculator: calculatorReducer,

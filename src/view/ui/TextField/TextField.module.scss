@@ -20,13 +20,12 @@
 
 .field {
   width: 100%;
-  padding: 6px 12px;
 
   font-family: inherit;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: var(--color-light-100);
+  color: var(--text-default);
 
   background: transparent;
   border: 1px solid black;
@@ -35,16 +34,20 @@
   transition: border-color 0.2s;
 
   &::placeholder {
-    color: black;
+    color: #b0afaf;
   }
 
   &:focus-visible {
     //border-color: blueviolet;
-    outline: 1px solid black;
+    //outline: 1px solid black;
   }
 
   &:hover {
     //background: greenyellow;
+  }
+
+  &.hasLeadingIcon {
+    padding-left: 41px;
   }
 
   &.error {
@@ -53,56 +56,28 @@
     outline: none;
 
     &:focus-visible {
-      outline: 1px solid black;
+      &:focus-visible {
+        border-image: linear-gradient(to right, #ff6060, #ff8484) 1;
+      }
     }
   }
-
-  &.hasLeadingIcon {
-    padding-left: 41px;
-  }
-}
-
-.fileInputContainer {
-  position: relative;
-
-  //overflow: hidden;
-  //display: inline-block;
-  width: 100%;
-}
-
-.fileInputLabel {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 6px;
-
-  color: var(--color-light-100);
-
-  background-color: blue;
-  border-radius: 4px;
-
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: red;
-  }
-}
-
-.fileInput {
-  cursor: pointer;
-
-  position: absolute;
-  top: -30px;
-  left: 450px;
-
-  opacity: 0;
 }
 
 .errorText {
-  //position: absolute;
   color: red;
+}
+
+
+.trailingIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  //right: 12px;
+  z-index: 1;
+}
+
+.hasTrailingIcon {
+  padding-right: 41px;
 }
 
 .label {
@@ -117,8 +92,8 @@
   left: 0;
   transform: translateY(-50%);
 
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-left: 12px;
   padding: 0;
 

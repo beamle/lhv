@@ -9,15 +9,15 @@
   .cardsContainerWrapper {
     flex-wrap: wrap;
     @include media-small {
-      row-gap: 10px;
+      margin-bottom: 10px;
     }
 
     .cardsContent {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      column-gap: 30px;
-      row-gap: 20px;
+      //column-gap: 30px;
+      //margin-bottom: 20px;
     }
   }
 }

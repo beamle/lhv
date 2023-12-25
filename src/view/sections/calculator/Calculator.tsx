@@ -1,26 +1,30 @@
 import { ContainerContentWrapper } from "@/view/components";
 import s from "./Calculator.module.scss";
-import { Button, ControlledTextField, TextField, Typography } from "@/view/ui";
+import { Button, TextField, Typography } from "@/view/ui";
 import { z } from "zod";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { addItemAC, addItemsPrice, removeItem } from "@/app/calculatorReducer";
+import {
+  addItemsPrice,
+  removeItem,
+} from "@/view/sections/calculator/reducer/calculatorReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { AppRootStateType } from "@/app/store";
-import { ChangeEvent, useCallback } from "react";
+import { Bin, Euro, Plus } from "../../../../public/assets/icons";
 
-export type CalculatorValues = z.infer<typeof calculatorSchema>;
+export type FormValues = z.infer<typeof calculatorSchema>;
 
 const calculatorSchema = z.object({
-  item: z
-    .string()
-    .min(1, "Nimetus peab olema vähemalt 1 sümbolit pikk")
-    .max(25, "Nimetus võib olla maksimum 25 sümbolit pikk"),
-  price: z.coerce
-    .number({
-      invalid_type_error: "Siia võib lisada ainult numbrit",
-    })
-    .gte(1, "Peab olema rohkem kui 0"),
+  items: z.array(
+    z.object({
+      name: z.string().min(1, "Palun lisa ka nimetust"),
+      price: z.coerce
+        .number({
+          invalid_type_error: "Palun lisa ainult numbrid",
+        })
+        .gte(0, "Peab olema rohkem kui 0"),
+    }),
+  ),
 });
 
 export const Calculator = () => {
@@ -28,13 +32,10 @@ export const Calculator = () => {
   const calculatorItems = useSelector(
     (state: AppRootStateType) => state.calculator.items,
   );
-  console.log(calculatorItems, "calculatorItems");
 
   const calculatorItemsSum = () => {
     return calculatorItems.reduce((acc, item) => (acc += item.price), 0);
   };
-
-  console.log(calculatorItemsSum(), "sum");
 
   const {
     control,
@@ -44,8 +45,9 @@ export const Calculator = () => {
   } = useForm({
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
-      items: [{ item: "", price: 0 }],
+      items: [{ name: "", price: 0 }],
     },
+    mode: "onBlur",
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -53,31 +55,11 @@ export const Calculator = () => {
     control,
   });
 
-  console.log(fields, "fields");
-
-  // const handleAddingItemToCalculator = handleSubmit(
-  //   (calcItem: CalculatorValues) => {
-  //     console.log(calcItem);
-  //     dispatch(addItemAC(calcItem));
-  //   },
-  // );
-
-  let timeoutId: ReturnType<typeof setTimeout>;
-  const saveItemChanges = (
-    e: ChangeEvent<HTMLInputElement>,
-    fieldId: string,
-  ) => {
-    const targetValue = e.target.value;
-
-    if (timeoutId) {
-      clearTimeout(timeoutId);
+  const handlePriceChange = (price: string, fieldId: string) => {
+    const priceAsNumber = Number(price);
+    if (!isNaN(priceAsNumber) && priceAsNumber > 0) {
+      dispatch(addItemsPrice({ id: fieldId, price: priceAsNumber }));
     }
-    timeoutId = setTimeout(() => {
-      // call it changeItemsPrice, coz we change from the beginning (0 is initial)
-      dispatch(addItemsPrice({ id: fieldId, price: Number(targetValue) }));
-      // dispatch target value
-      // add to this object from fields the proper field it of item.
-    }, 200);
   };
 
   const removeItemFromCalculator = () => {
@@ -90,72 +72,103 @@ export const Calculator = () => {
     dispatch(removeItem(itemToRemove.id));
   };
 
+  const onSubmit = handleSubmit((data: FormValues) => {
+    console.log(data);
+  });
+
   return (
     <div id={"calculatorSection"} className={s.calculatorContainer}>
       <ContainerContentWrapper className={s.calculatorContainerContentWrapper}>
-        <Typography variant={"h2"}>
-          <strong>Pane oma soovinimekiri kokku</strong> siinsamas lehel ja vaata
-          oma sisustuse kuumakset.
+        <Typography variant={"h2"} className={s.headline}>
+          <strong>Pane oma soovinimekiri kokku</strong> siinsamas lehel ja
+          <br /> vaata oma sisustuse kuumakset.
         </Typography>
-        <Typography>Toode</Typography>
-        <Typography>Hind</Typography>
-        <form onSubmit={(e) => e.preventDefault()}>
-          {fields.map((_field, idx) => {
-            return (
-              <div key={idx} className={s.formContentWrapper}>
-                <div>
-                  <TextField
-                    {...register(`items.${idx}.item`)}
-                    errorMessage={errors.items?.message} // wrong message extraction?
-                  />
-                </div>
-                <div>
-                  <TextField
-                    {...register(`items.${idx}.price`)}
-                    onChange={(e) => saveItemChanges(e, _field.id)}
-                    errorMessage={errors.items?.message}
-                  />
-                </div>
-              </div>
-            );
-          })}
-          {/*<div className={s.formContentWrapper}>*/}
-          {/*  <div>*/}
-          {/*    <Typography>Toode</Typography>*/}
-          {/*    <ControlledTextField*/}
-          {/*      name={`numbers.${index}.number`}*/}
-          {/*      control={control}*/}
-          {/*      errorMessage={errors.items?.message}*/}
-          {/*    />*/}
-          {/*  </div>*/}
-          {/*  <div>*/}
-          {/*    <Typography>Hind</Typography>*/}
-          {/*    <ControlledTextField*/}
-          {/*      name={"items"}*/}
-          {/*      control={control}*/}
-          {/*      errorMessage={errors.items?.message}*/}
-          {/*    />*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          <div className={s.formBtns}>
-            <Button
-              onClick={() => append({ item: "", price: 0 })}
-              style={{ backgroundColor: "red" }}
-            >
-              Lisa
-            </Button>
-            {fields.length > 1 && (
-              <Button
-                onClick={removeItemFromCalculator}
-                style={{ backgroundColor: "red" }}
-              >
-                Kustuta
-              </Button>
-            )}
+        <div className={s.calculatorCentrilizer}>
+          <div className={s.fieldsLabels}>
+            <Typography>Toode</Typography>
+            <Typography>Hind</Typography>
+            <Typography />
           </div>
-        </form>
-        <div>sum : {calculatorItemsSum()}</div>
+          <form onChange={onSubmit} className={s.form}>
+            {fields.map((_field, idx) => {
+              return (
+                <div key={idx} className={s.formContentWrapper}>
+                  <div className={s.firstInput}>
+                    <TextField
+                      placeholder={"Toode.."}
+                      {...register(`items.${idx}.name`)}
+                    />
+                    <Typography
+                      className={s.errorMessage}
+                      style={{
+                        opacity: errors.items ? 1 : 0,
+                      }}
+                    >
+                      {errors.items?.[idx]?.name?.message}
+                    </Typography>
+                  </div>
+                  <div>
+                    <TextField
+                      {...register(`items.${idx}.price`)}
+                      onBlur={(e) =>
+                        handlePriceChange(e.target.value, _field.id)
+                      }
+                      icon={<Euro />}
+                      trailingIcon={true}
+                    />
+                    <Typography
+                      className={s.errorMessage}
+                      style={{
+                        opacity: errors.items ? 1 : 0,
+                      }}
+                    >
+                      {errors.items?.[idx]?.price?.message}
+                    </Typography>
+                  </div>
+                </div>
+              );
+            })}
+            <div className={s.formBtns}>
+              <Button
+                iconFirst={true}
+                variant={"clean"}
+                icon={<Plus />}
+                type={"button"}
+                onClick={() => append({ name: "", price: 0 })}
+                disabled={!!errors?.items}
+                className={s.inputWithError}
+              >
+                Lisa
+              </Button>
+              {fields.length > 1 && (
+                <Button
+                  iconFirst={true}
+                  variant={"clean"}
+                  icon={<Bin />}
+                  type={"button"}
+                  onClick={removeItemFromCalculator}
+                  className={s.inputWithError}
+                >
+                  Kustuta
+                </Button>
+              )}
+            </div>
+          </form>
+          <Typography className={s.sum}>
+            Summa kokku {calculatorItemsSum()}
+          </Typography>
+          <Button variant={"primary"}>Taotle sisustuslaenu</Button>
+          <Typography className={s.readTerms} variant={"link2"}>
+            Tutvu tingimustega
+          </Typography>
+        </div>
       </ContainerContentWrapper>
+      <Typography className={s.disclaimer}>
+        <div dangerouslySetInnerHTML={{ __html: DISCLAIMER }} />
+      </Typography>
     </div>
   );
 };
+
+const DISCLAIMER =
+  "Sisustuslaenu pakub AS LHV Finance. Tutvu tingimustega <a href='https://www.lhv.ee/et/sisustuslaen'>lhv.ee/et/sisustuslaen</a> ja küsi nõu asjatundjalt. Krediidi kulukuse määr on 15,85% aastas järgmistel näidistingimustel: laenusumma 7500 €, intress 13,9% jäägilt aastas (fikseeritud), lepingutasu 150 €, laenu tasumise periood 60 kuud, tasumine igakuiste annuiteetmaksetena, maksete kogusumma 10 600,10 € ja tagasimaksete summa 10 450,10 €.";

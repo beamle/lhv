@@ -1,5 +1,6 @@
 import { Button } from "@/view/ui";
 import s from "./Navbar.module.scss";
+import { Search } from "../../../../public/assets/icons";
 
 export const Navbar = () => {
   return (
@@ -10,12 +11,13 @@ export const Navbar = () => {
             {item.name}
           </Button>
         ))}
+        <Button icon={<Search />} />
       </div>
     </nav>
   );
 };
 
-const navbarItems = [
+export const navbarItems = [
   { name: "IGAPÄEVAPANGANDUS", link: "" },
   { name: "RAHA KASVATAMINE", link: "" },
   { name: "LAEN JA LIISING", link: "" },

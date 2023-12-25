@@ -1,6 +1,6 @@
-import s from "./Container.module.scss";
 import { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 import { clsx } from "clsx";
+import s from "./Container.module.scss";
 
 type PageType<T extends ElementType> = {
   children: ReactNode;

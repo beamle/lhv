@@ -1,0 +1,23 @@
+.plusOutline{
+  stroke: #3B3B47;
+}
+
+.plusLine {
+  stroke: #3B3B47;
+}
+
+.plusIcon:hover .plusOutline {
+  stroke: #7c7c7c;
+}
+
+.plusIcon:active .plusOutline {
+  stroke: black;
+}
+
+.plusIcon:hover .plusLine {
+  stroke: #7c7c7c;
+}
+
+.plusIcon:active .plusLine {
+  stroke: black;
+}

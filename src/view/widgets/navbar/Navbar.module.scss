@@ -1,9 +1,9 @@
+@import "@/app/styles";
+
 .navbarContainer{
   display: flex;
   justify-content: space-around;
   width: 100%;
-  //max-width: 768px;
-  //padding: 10px 300px;
   color: var(--text-default);
   height: 56px;
   background-color: var(--color-light-200);
@@ -20,6 +20,10 @@
 
   .navbarButton {
     text-transform: uppercase;
+  }
+
+  @include media-medium {
+    display: none;
   }
 
 }

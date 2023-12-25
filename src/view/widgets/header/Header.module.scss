@@ -1,8 +1,51 @@
+@import "@/app/styles";
+
 .headerContainer{
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 1440px;
   padding: 16px 64px;
+  //z-index: 1;
+  background-color: var(--surface);
 
+  .logoContainer {
+    display: flex;
+    align-items: center;
+
+    
+    .logoText {
+      margin-left: 32px;
+      color: var(--accent-gray-600)
+    }
+  }
+
+  .btnsContainer {
+    display: flex;
+    align-items: center;
+
+    .openContoBtn {
+      margin-right: 20px;
+    }
+    .loginBtn {
+      margin-right: 12px;
+    }
+
+  }
+
+  .burgerMenu {
+    display: none;
+  }
+
+
+  @include media-medium {
+    .burgerMenu {
+      display: initial;
+      color: red
+    }
+    .openContoBtn,
+    .logoText {
+      display: none;
+    }
+  }
 }

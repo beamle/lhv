@@ -8,17 +8,13 @@ export type TypographyProps<T extends ElementType> = {
   variant?:
     | "body1"
     | "body2"
-    | "caption"
     | "h1"
     | "h2"
     | "h3"
-    | "large"
+    | "h4"
     | "link1"
     | "link2"
-    | "caption2"
-    | "overline"
-    | "subtitle1"
-    | "subtitle2";
+    | "link3";
 } & ComponentPropsWithoutRef<T>;
 
 export const Typography = <T extends ElementType = "div">(

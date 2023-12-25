@@ -17,6 +17,7 @@
       display: flex;
       align-items: center;
       color: var(--text-default);
+      &:focus { color: var(--surface);}
     }
   }
 

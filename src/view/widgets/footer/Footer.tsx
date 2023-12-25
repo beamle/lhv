@@ -1,126 +1,138 @@
-import s from "@/view/sections/introduce/Introduce.module.scss";
-// import s from "./Footer.module.scss";
-import { Fragment } from "react";
+import s from "./Footer.module.scss";
+import { ContainerContentWrapper } from "@/view/components";
+import { Typography } from "@/view/ui";
+import {
+  AppGallery,
+  AppStore,
+  Facebook,
+  GoogleStore,
+  Instagram,
+  Soundclub,
+  Youtube,
+} from "../../../../public/assets/icons";
 
 export const Footer = () => {
   return (
-    <Fragment>
-      <div id={"footer"} style={{ display: "flex", flexDirection: "row" }}>
-        {cardsData
-          .sort((a, b) => a.oder - b.oder)
-          .map((c, i) => (
-            <HomepageCard
-              action={c.title}
-              withImage={c.withPhoto}
-              body={c.title}
-              key={i}
-              title={c.title}
-            ></HomepageCard>
-          ))}
-      </div>
-
-      <div className={s.footbar + " " + s.containerwrapper}>
-        <div className={s.footerLeftContainer}>
-          {footerItems.lefttSide.map((item, idx) => (
-            <div key={idx} className={s.footerColumnsItemContainer}>
-              {item.title}
-              <div>
-                {item.items.map((m, i) => (
-                  <div key={i}>{m.name}</div>
-                ))}
+    <div className={s.footerContainer}>
+      <ContainerContentWrapper className={s.footerContainerContentWrapper}>
+        <div className={s.footer}>
+          <div className={s.footerLeftContainer}>
+            {footerLinks.lefttSide.map((link, idx) => (
+              <div key={idx} className={s.footerColumnsItemContainer}>
+                <Typography variant={"h4"}>{link.title}</Typography>
+                <div>
+                  {link.items.map((item, idx) => (
+                    <Typography variant={"link3"} key={idx}>
+                      {item.name}
+                    </Typography>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className={s.footerRightContainer}>
-          {footerItems.rightSide.map((item, idx) => (
-            <div key={idx} className={s.footerColumnsItemContainer}>
-              {item.title}
-              <div>
-                {item.items.map((m, i) => (
-                  <div key={i}>{m.name}</div>
-                ))}
+            ))}
+          </div>
+          <div className={s.footerRightContainer}>
+            {footerLinks.rightSide.map((link, idx) => (
+              <div key={idx} className={s.footerColumnsItemContainer}>
+                <Typography variant={"h4"}>
+                  {link.title === "" ? "\u00A0" : link.title}
+                </Typography>
+                <div>
+                  {link.items.map((item, idx) => (
+                    <Typography variant={"link3"} key={idx}>
+                      {item.name}
+                    </Typography>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      <div className={s.footerAppstoreLinks + " " + s.containerwrapper}>
-        <p>ddd</p>
-      </div>
-    </Fragment>
-  );
-};
-
-const HomepageCard = ({ withImage, title, body, action }) => {
-  return withImage ? (
-    <div style={{ color: "black" }}>
-      {title}
-      {action}
-      with photo
-    </div>
-  ) : (
-    <div style={{ color: "black" }}>
-      without photo
-      {body}
-      {action}
+        <div className={s.footerAppstoreLinks}>
+          <div className={s.mediaContainer}>
+            <div className={s.socialMediaIcons}>
+              {socialMediaIcons.map((icon, idx) => (
+                <div key={idx}>{icon}</div>
+              ))}
+            </div>
+            <div className={s.mobileStores}>
+              {mobileStores.map((item, idx) => (
+                <div key={idx}>{item}</div>
+              ))}
+            </div>
+          </div>
+          <Typography variant={"body2"} className={s.terms}>
+            <div dangerouslySetInnerHTML={{ __html: terms }} />
+          </Typography>
+        </div>
+      </ContainerContentWrapper>
     </div>
   );
 };
-const footerItems = {
+
+const terms =
+  "AS LHV Group, Tartu mnt 2, 10145, Tallinn. Oled finantsteenuseid pakkuvate ettevõtete AS LHV Pank, LHV Finance, LHV Kindlustus ja LHV Varahaldus veebilehel. Enne finantsteenuse lepingu sõlmimist tutvu <a href=''>teenuse tingimustega<a/> või küsi lisainfot. <a href=''>Noteeringud on viivitusega.<a/>";
+
+const mobileStores = [<AppStore />, <GoogleStore />, <AppGallery />];
+const socialMediaIcons = [
+  <Instagram />,
+  <Facebook />,
+  <Youtube />,
+  <Soundclub />,
+];
+const footerLinks = {
   lefttSide: [
     {
-      title: "column one",
+      title: "Tule kliendiks",
       items: [
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
+        { name: "Eraklient", link: "link1 " },
+        { name: "Äriklient", link: "link1 " },
+        { name: "Noortepank", link: "link1 " },
+        { name: "Lapsekonto", link: "link1 " },
+        { name: "Au-klient", link: "link1 " },
+        { name: "Privaatpangandus", link: "link1 " },
+        { name: "Ava konto", link: "link1 " },
       ],
     },
     {
-      title: "column two",
+      title: "Kasulikku",
       items: [
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
+        { name: "Hinnakiri ja tingimused", link: "link1 " },
+        { name: "Ettepanekud ja kaebused", link: "link1 " },
+        { name: "Turvalisus", link: "link1 " },
+        { name: "Teata petulehest", link: "link1 " },
+        { name: "Teenuste seis", link: "link1 " },
+        { name: "KKK", link: "link1 " },
       ],
     },
   ],
   rightSide: [
     {
-      title: "column one",
+      title: "LHV",
       items: [
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
+        { name: "Ettevõttest", link: "link1 " },
+        { name: "Investorile", link: "link1 " },
+        { name: "Tööpakkumised", link: "link1 " },
+        { name: "Hea tegu", link: "link1 " },
+        { name: "Roheline LHV", link: "link1 " },
+        { name: "Roheline LHV", link: "link1 " },
       ],
     },
     {
-      title: "column two",
+      title: "",
       items: [
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
+        { name: "Finantsportaal", link: "link1 " },
+        { name: "Uudised", link: "link1 " },
+        { name: "Blogi", link: "link1 " },
       ],
     },
     {
-      title: "column three",
+      title: "Kontakt",
       items: [
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
-        { name: "subitem 1", link: "link1 " },
+        { name: "Kontaktid", link: "link1 " },
+        { name: "Kontorid", link: "link1 " },
+        { name: "Broneeri kohtumisaeg", link: "link1 " },
+        { name: "Sularahaautomaadid", link: "link1 " },
       ],
     },
   ],
 };
-
-const cardsData = [
-  { oder: 1, title: "11" },
-  { oder: 2, withPhoto: true, title: "11" },
-  { oder: 0, withPhoto: true, title: "11" },
-];

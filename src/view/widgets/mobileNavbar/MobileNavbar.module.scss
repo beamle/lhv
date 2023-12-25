@@ -1,0 +1,29 @@
+.mobileNavbar {
+  //position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  min-height: 960px;
+  width: 100%;
+  background-color: var(--color-light-300);
+  z-index: 1;
+
+  .navbarContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    width: 100%;
+    padding: 20px 65px;
+    align-items: flex-start;
+
+    .navbarButton {
+      margin-bottom: 10px;
+    }
+
+    .search {
+      border: none;
+      border-bottom: 1px solid var(--accent-gray-600);
+    }
+
+  }
+}

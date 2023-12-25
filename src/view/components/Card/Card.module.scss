@@ -2,6 +2,7 @@
   width: 294px;
   height: 294px;
   background-color: var(--surface);
+  margin: 0 10px 20px 10px;
 
   .flipCardInner {
     transform-style: preserve-3d;
@@ -11,7 +12,7 @@
     height: inherit;
 
     &.showBack {
-      transform: rotateY(180deg);
+      transform: rotateY(-180deg);
     }
 
     .card {
